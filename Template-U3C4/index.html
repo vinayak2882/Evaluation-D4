@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="sidebar">
+
+        <!--DO NOT CHANGE THIS ID's-->
+
+
+      </div>
+
+      <div id="main">
+        <!--DO NOT CHANGE THIS ID's-->
+
+      </div>
+    </div>
+  </body>
+
+</html>
+
+<script type="module">
+
+  import sidebar from "./components/sidebar.js";
+let Sidebar = document.getElementById("sidebar")
+  Sidebar.innerHTML = sidebar();
+
+import {apiCall, appendArticles} from "./scripts/main.js"
+var Main = document.getElementById("main")
+var api ="https://gnews.io/api/v4/top-headlines?token=dde2a69dd757a4355879648f968803f6";
+var data =apiCall(api)
+data.then((data)=>{
+// appendArticles(data,main)
+
+  console.log(data)
+})
+
+
+</script>
